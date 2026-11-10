@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-10
 ---
 
 # Morning digest
@@ -77,3 +78,20 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Outcome | Worker | Commit | Closed |
+|---|-------|---------|--------|--------|--------|
+| 1 | Digest types: DigestRow + readNight signature | `src/digest/types.ts` with the DigestRow type and the readNight signature (declared, not implemented) | opencode · big-pickle · high | c35a263 | 2026-11-10 |
+| 2 | Run log reader: readNight | readNight reads a night into one sorted row per job, counting bad lines and keeping null owners | opencode · big-pickle · high | 5fcff78 | 2026-11-10 |
+| 3 | Digest page: GET /digest/:night | renders the night's jobs as one table, retries of 3 or more and any fail marked; 404 without a file, "nothing ran" when empty | opencode · minimax-m3.1-flash-free · medium | 3d81e53 | 2026-11-10 |
+| 4 | Digest JSON: GET /api/digest/:night | the page's rows as JSON, from the same readNight source; 404 with a JSON error body | opencode · mimo-v2.6-flash-free · medium | 5817b4b | 2026-11-10 |
+| 5 | Board link: each night links to its digest | the board links every night on disk to its digest with its ok / retry / fail counts | opencode · mimo-v2.6-flash-free · medium | e5fbbe8 | 2026-11-10 |
+| 6 | Route tests for digest page and JSON | route tests for both digest routes: 200, 404, empty night, bad line, page and JSON in the same order | opencode · minimax-m3.1-flash-free · medium | 499e18b | 2026-11-10 |
+| 7 | Preview for review: GH Pages upload of /digest/2026-10-28 | a save-preview command writes the page to one self-contained HTML file; uploaded to GH Pages and reviewed | opencode · minimax-m3.1-flash-free · medium | 75fcbba | 2026-11-10 |
+| 8 | Clean up: marker off the preview, plan to done | the marker is off the live preview and this plan sits in `docs/plans/done/` with its issue list | opencode · minimax-m3.1-flash-free · medium | 51a2ddc | 2026-11-10 |
+
+The preview lives at https://orcwarrior.github.io/rig/digest-2026-10-28.html. It was uploaded again
+without the lane marker (the banner reads "no marker set"), so the public link carries no lane
+data. See ADR 0003.
