@@ -90,7 +90,7 @@ Done when: the preview link no longer shows the lane marker.
 | 5 | Board link: each night links to its digest | the board links every night on disk to its digest with its ok / retry / fail counts | opencode · mimo-v2.6-flash-free · medium | e5fbbe8 | 2026-11-10 |
 | 6 | Route tests for digest page and JSON | route tests for both digest routes: 200, 404, empty night, bad line, page and JSON in the same order | opencode · minimax-m3.1-flash-free · medium | 499e18b | 2026-11-10 |
 | 7 | Preview for review: GH Pages upload of /digest/2026-10-28 | a save-preview command writes the page to one self-contained HTML file; uploaded to GH Pages and reviewed | opencode · minimax-m3.1-flash-free · medium | 75fcbba | 2026-11-10 |
-| 8 | Clean up: marker off the preview, plan to done | the marker is off the live preview and this plan sits in `docs/plans/done/` with its issue list | opencode · minimax-m3.1-flash-free · medium | — (this commit) | 2026-11-10 |
+| 8 | Clean up: marker off the preview, plan to done | the marker is off the live preview and this plan sits in `docs/plans/done/` with its issue list | opencode · minimax-m3.1-flash-free · medium | 51a2ddc | 2026-11-10 |
 
 The preview lives at https://orcwarrior.github.io/rig/digest-2026-10-28.html. It was uploaded again
 without the lane marker (the banner reads "no marker set"), so the public link carries no lane
