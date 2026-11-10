@@ -16,10 +16,10 @@ export function DigestPage({ digest }: { digest: NightDigest }) {
               <th>owner</th>
               <th>runs</th>
               <th>retries</th>
-              <th>status</th>
-              <th>error</th>
-              <th>first</th>
-              <th>last</th>
+              <th>last status</th>
+              <th>last error</th>
+              <th>first time</th>
+              <th>last time</th>
             </tr>
           </thead>
           <tbody>
@@ -43,6 +43,16 @@ export function DigestPage({ digest }: { digest: NightDigest }) {
           {digest.badLines} unreadable line{digest.badLines === 1 ? '' : 's'} not shown
         </p>
       )}
+    </>
+  );
+}
+
+// The 404 body for a night with no file on disk: same layout, same stylesheet, no table.
+export function DigestMissing({ night }: { night: string }) {
+  return (
+    <>
+      <h1>digest · {night}</h1>
+      <p class="mute">no run log for that night</p>
     </>
   );
 }
